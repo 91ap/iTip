@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculator View Controller-->
         <scene sceneID="cCD-ZF-EQC">
             <objects>
-                <viewController id="Ie5-eF-Fjf" sceneMemberID="viewController">
+                <viewController id="Ie5-eF-Fjf" customClass="CalculatorViewController" customModule="iTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Ez-R9-JaR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,10 +60,14 @@
                                                             <constraint firstAttribute="height" constant="54" id="5pM-jf-kBf"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <color key="tintColor" red="0.20392156859999999" green="0.5" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="0%">
                                                             <color key="titleColor" red="0.32156863810000003" green="0.65882354970000001" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="Ie5-eF-Fjf" eventType="touchUpInside" id="Nrt-bE-HuE"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSU-Ly-s3B">
                                                         <rect key="frame" x="133" y="0.0" width="67" height="54"/>
@@ -71,10 +75,14 @@
                                                             <constraint firstAttribute="height" constant="54" id="gaY-pY-qZR"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <color key="tintColor" red="0.20392156859999999" green="0.5" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="10%">
                                                             <color key="titleColor" red="0.32156863810000003" green="0.65882354970000001" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="Ie5-eF-Fjf" eventType="touchUpInside" id="hca-DR-yQ0"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huX-Cs-0yj">
                                                         <rect key="frame" x="282" y="0.0" width="71" height="54"/>
@@ -82,10 +90,14 @@
                                                             <constraint firstAttribute="height" constant="54" id="i5F-gI-Zik"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <color key="tintColor" red="0.20392156859999999" green="0.5" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="20%">
                                                             <color key="titleColor" red="0.32156863810000003" green="0.65882354970000001" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="tipChanged:" destination="Ie5-eF-Fjf" eventType="touchUpInside" id="apb-q7-ZXm"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -118,6 +130,9 @@
                                                             <constraint firstAttribute="width" constant="94" id="eKI-pL-oCN"/>
                                                         </constraints>
                                                         <color key="tintColor" red="0.32156863810000003" green="0.65882354970000001" blue="0.54509806630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <connections>
+                                                            <action selector="stepperValueChanged:" destination="Ie5-eF-Fjf" eventType="valueChanged" id="YwN-ni-Plv"/>
+                                                        </connections>
                                                     </stepper>
                                                 </subviews>
                                                 <constraints>
@@ -135,8 +150,13 @@
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Calculate" cornerStyle="capsule">
+                                            <backgroundConfiguration key="background"/>
                                             <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
+                                            <color key="baseBackgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="calculatePressed:" destination="Ie5-eF-Fjf" eventType="touchUpInside" id="Zyg-NT-1eG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87058818339999999" green="0.98039215800000001" blue="0.91372549530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -163,15 +183,22 @@
                             <constraint firstAttribute="bottom" secondItem="hKe-Sn-B4K" secondAttribute="bottom" id="mKu-M5-qRk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billTextField" destination="F9V-TN-SWC" id="xnR-gQ-tAG"/>
+                        <outlet property="splitNumberLabel" destination="Szu-TS-bzY" id="UTI-rh-7eT"/>
+                        <outlet property="tenPctButton" destination="lSU-Ly-s3B" id="Mwl-hz-ORG"/>
+                        <outlet property="twentyPctButton" destination="huX-Cs-0yj" id="hoG-2R-fAR"/>
+                        <outlet property="zeroPctButton" destination="OhE-VF-lQ9" id="Cnp-pk-5LM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="70k-ec-mGw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-8469.4656488549608" y="1263.3802816901409"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="2zw-hM-dof">
             <objects>
-                <viewController id="daB-Iy-VZP" sceneMemberID="viewController">
+                <viewController id="daB-Iy-VZP" customClass="ResultsViewController" customModule="iTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7WY-Yn-hCz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,6 +248,9 @@
                                         <buttonConfiguration key="configuration" style="tinted" title="Recalculate" cornerStyle="capsule">
                                             <fontDescription key="titleFontDescription" type="system" pointSize="35"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="recalculatePressed:" destination="daB-Iy-VZP" eventType="touchUpInside" id="npL-CQ-fEp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96470588450000005" green="0.95686274770000002" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -248,6 +278,10 @@
                             <constraint firstItem="4mi-99-3ut" firstAttribute="leading" secondItem="7WY-Yn-hCz" secondAttribute="leading" id="slD-N2-cqV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="settingsLabel" destination="GnW-bN-qLn" id="Lyo-77-fex"/>
+                        <outlet property="totalLabel" destination="IEa-uR-4Sx" id="aoY-6Y-2jq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEv-qq-nG6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
